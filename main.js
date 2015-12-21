@@ -19,13 +19,15 @@ app.on('window-all-closed', function() {
 
 app.on('ready', function() {
 	// ブラウザ(Chromium)の起動, 初期画面のロード
+	 
 	mainWindow = new BrowserWindow({
-		width      : 10000,
-		height     : 10000,
+		width      : 800,
+		height     : 600,
 		transparent: true,
 		frame      : false,
 		"always-on-top": true
 	});
+	mainWindow.maximize();
 	mainWindow.loadUrl('file://' + __dirname + '/index.html');
 
 	mainWindow.on('closed', function() {
