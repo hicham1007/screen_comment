@@ -1,0 +1,18 @@
+<html>
+<!doctype html>
+<meta charset="utf-8">
+<title>electron chat</title>
+<script>
+window.$ = require("jquery");
+$(function() {
+  var socket = require('socket.io-client')('http://54.65.112.209:3000');
+  socket.on('new message', function(data) {
+	var comment = document.createElement("marquee");
+	comment.setAttribute('loop', '1');
+	comment.setAttribute('style', 'position: absolute; left: -10px; top: ' + (Math.random() * 600) + 'px');
+	comment.innerHTML = data['message'];
+	$('div').append(comment);
+  });
+});
+</script>
+<div></div>
