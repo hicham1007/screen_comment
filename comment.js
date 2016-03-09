@@ -1,6 +1,6 @@
 window.$ = require("jquery");
 $(function() {
-  var socket = require('socket.io-client')('http://54.65.112.209:3000');
+  var socket = require('socket.io-client')('http://screen-comment.peto-tn.net');
   socket.on('new message', function(data) {
 	var comment = document.createElement("marquee");
 	comment.setAttribute('loop', '1');
